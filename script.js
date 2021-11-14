@@ -1,34 +1,30 @@
-function menampilkanData() {
-    $(document).ready(function () {
-        $('#btnPreview').click(function () {
-            $("#previewCard").modal("show");
+$(document).ready(function() {
+                $('#btnPreview').click(function() {
+                    $("#previewCard").modal("show");
                 
-            let valueNama = $('#name').val();
-            let valueAge = $('#age').val();
-            let valueReligion = $('#religion').val();
-            let valueGender = $('input[name="gender"]:checked').val();
-            let valuePhone = $('#phone').val();
-            let valueFoto = $('#photo').val();
+                    let valueNama = $('#name').val();
+                    let valueTTGL = $('#age').val();
+                    let valueGender = $('input[name="gender"]:checked').val();
+                    let valueReligion = $('#religion').val();
+                    let valuePhone = $('#phone').val();
+                    let valueFoto = $('#photo').val();
 
-            $('#outName').html(valueNama);
-            $('#outAge').html(valueAge);
-            $('#outGender').text(valueGender);
-            $('#outReligion').html(valueReligion);
-            $('#outPhone').html(valuePhone);
-        });
-    });
+                    $('#outName').html(valueNama);
+                    $('#outAge').html(valueTTGL);
+                    $('#outGender').html(valueGender);
+                    $('#outReligion').html(valueReligion);
+                    $('#outPhone').html(valuePhone);
+                });
+            });
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            let reader = new FileReader();
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    let reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#photo').attr('src', e.target.result);
-            };
+                    reader.onload = function (e) {
+                        $('#card-photo').attr('src', e.target.result);
+                    };
 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+                    reader.readAsDataURL(input.files[0]);
+                }
 }
-
-       
